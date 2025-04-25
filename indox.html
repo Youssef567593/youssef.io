@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>موقعي الإبداعي</title>
+    <style>
+        :root {
+            --primary: #6C63FF;
+            --dark: #2F2E41;
+            --light: #F9F9F9;
+        }
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background: var(--light);
+            color: var(--dark);
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: var(--primary);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 4rem 2rem;
+        }
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+        }
+        .feature-card {
+            background: white;
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: var(--dark);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>مرحبًا بكم في عالمي الإبداعي</h1>
+        <p>هذا موقع يعرض أفكاري ومشاريعي المميزة</p>
+    </header>
+
+    <section class="hero">
+        <h2>أفكاري الجديدة ✨</h2>
+        <button id="ideaBtn">اضغط لرؤية فكرة عشوائية</button>
+        <p id="ideaText"></p>
+    </section>
+
+    <section class="features">
+        <div class="feature-card">
+            <h3>🎨 تصميم جرافيك</h3>
+            <p>أقدم تصاميم فريدة باستخدام أحدث الأدوات</p>
+        </div>
+        <div class="feature-card">
+            <h3>💻 برمجة مواقع</h3>
+            <p>تطوير مواقع تفاعلية بتقنيات حديثة</p>
+        </div>
+        <div class="feature-card">
+            <h3>📱 تطبيقات جوال</h3>
+            <p>بناء تطبيقات مبتكرة لنظامي Android و iOS</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>تابعني على: 
+            <a href="#" style="color: #FFD700;">تويتر</a> | 
+            <a href="#" style="color: #FFD700;">إنستغرام</a>
+        </p>
+    </footer>
+
+    <script>
+        const ideas = [
+            "روبوت للرد على الاستفسارات تلقائيًا",
+            "لعبة تعليمية للأطفال بتقنية الواقع المعزز",
+            "منصة للتعلم الذاتي باللغة العربية",
+            "تطبيق لإدارة الوقت باستخدام تقنيات الذكاء الاصطناعي"
+        ];
+        
+        document.getElementById('ideaBtn').addEventListener('click', function() {
+            const randomIdea = ideas[Math.floor(Math.random() * ideas.length)];
+            document.getElementById('ideaText').textContent = randomIdea;
+        });
+    </script>
+</body>
+</html>
